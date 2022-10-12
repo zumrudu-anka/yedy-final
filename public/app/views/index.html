@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/homepage_styles.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/navbar.css" />
+
+    <!-- Main Angular Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- Angular Config -->
+    <script src="/app/app.js"></script>
+    <script src="/app/routes.js"></script>
+
+    <!-- Angular Services -->
+    <script src="/app/services/formServices.js"></script>
+
+    <!-- Angular Controllers -->
+    <script src="/app/controllers/formCtrl.js"></script>
+
+    <title>YEDY</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+
+    <div class="topnav" id="myTopnav">
+      <img src="assets/img/letter-y.png" />
+      <a href="/" class="logo">YEDY</a>
+      <a href="#about" class="middle">About</a>
+      <a href="#contact" class="middle">Contact</a>
+      <a href="#resources" class="middle" class="resources">Resources</a>
+      <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!-- Main -->
+    <div class="grid-container">
+      <div class="grid-left">
+        <div class="text">
+          <h1>The freedom to create your own website</h1>
+        </div>
+        <div id="">
+          <p
+            style="
+              font-size: 18px;
+              font-weight: 100;
+              text-align: justify;
+              line-height: 30px;
+            "
+          >
+            Design and build your own high-quality websites. Whether you're
+            promoting your small business, opening your store - you can do it
+            all with the Yedy website builder.
+          </p>
+        </div>
+        <div class="btn">
+          <form action="/app/views/forms/main-form.html">
+            <input type="submit" value="Get Started" />
+          </form>
+        </div>
+      </div>
+
+      <div class="grid-right">
+        <img src="assets/img/Designer.jpg" />
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <!--Responsive navbar function -->
+    <script>
+      function responsiveNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>
