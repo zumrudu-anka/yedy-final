@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  padding-top: 50px;
+  font-family: "Poppins", sans-serif ;
+}
+
+pre {
+  margin-bottom: 20px;
+}
+
+/* GRID
+============================================================================= */
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(4, 120px);
+  justify-content: center;
+  justify-content: center;
+  
+}
+
+.box {
+  color: black;
+  padding: 20px;
+  font-size: 18px;
+  padding-top: 2;
+}
+
+.item1 {
+  grid-column: 1 / 8;
+}
+
+.item2 {
+  grid-column: 1/4;
+  grid-row: 2;
+  padding-left: 70px;
+}
+
+.item3 {
+  grid-column: 4/9;
+  grid-row: 2;
+  padding-top: 0;
+  margin-left: -120px;
+}
+
+.item4 {
+  grid-column: 7;
+  grid-row: 4;
+  margin-left: -40px;
+  margin-top: 60px;
+}
+
+.item5 {
+  grid-column: 1;
+  grid-row: 4;
+  padding-left: 20px;
+  margin-top: 60px;
+}
+
+img {
+  width: 500px;
+  height: 256px;
+  padding-left: 120px;
+  padding-top: 0px;
+}
+
+
+
+.item1 label {
+  font-size: 35px;
+  padding-left: 30px;
+}
+
+.item1 hr {
+  height: 0.5px;
+  background-color: lightgray;
+}
+
+.item2 label {
+  padding-top: 25px;
+}
+
+
+#name.item2{
+  padding-top: 20px;
+  width: 300px;
+}
+
+
+/* RADIO
+============================================================================= */
+
+
+input[type="radio"] {
+  background-color: white;
+  width: 1em;
+  height: 1em;
+  border: 0.15em solid #7d97f4;
+  border-radius: 50%;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 4px \9;
+}
+
+.radio label{
+  font-weight: 300;
+}
+
+
+
+
+/* BUTTON
+============================================================================= */
+
+.btn {
+  width: 100px;
+  border: 1px black;
+  background-color: #7d97f4;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.btn a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #4042eb;
+}
+
+#tema.btn{
+background-color: #1B1091;
+}
+/* FORM
+============================================================================= */
+#form-container {
+  /* question */
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: justify;
+  margin-top: 80px;
+}
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form {
+  overflow: hidden;
+  padding: 30px;
+  width: 100%;
+}
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+}
+
+/* enter animation */
+#form-views.ng-enter {
+  -webkit-animation: slideInRight 0.5s both ease;
+  -moz-animation: slideInRight 0.5s both ease;
+  animation: slideInRight 0.5s both ease;
+}
+
+/* leave animation */
+#form-views.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease;
+  -moz-animation: slideOutLeft 0.5s both ease;
+  animation: slideOutLeft 0.5s both ease;
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%);
+  }
+}
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%);
+  }
+}
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%);
+  }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%);
+  }
+  to {
+    -moz-transform: translateX(0);
+  }
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+  }
+}

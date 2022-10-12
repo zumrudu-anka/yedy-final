@@ -1,0 +1,45 @@
+
+  <div class="wrapper">
+    <div class="box item1">
+      <!-- Grid / Title -->
+      <label for="name">Give a name to your company</label>
+      <hr />
+    </div>
+  
+    <div class="box item2" id="name">
+      <!-- Grid / Options -->
+      <input type="text" class="form-control" name="name" ng-model="formData.name"
+    placeholder="Company name" ng-minlength=2 ng-required required>
+      <small class="error" 
+             ng-show="signupform.name.$error.required">
+             Your company name is required.
+      </small>
+      <small class="error" 
+             ng-show="signupform.name.$error.minlength">
+              Your company name is required to be at least 2 characters
+      </small>
+    </span>
+    </div>
+  
+    <div class="box item3" id="area">
+      <!-- Grid / Image -->
+      <img src="/assets/img/name.jpg" />
+    </div>
+  
+    <div class="box item4">
+      <!-- Grid / Button next -->
+      <div class="btn">
+        <a ui-sref="form.tema"> Next </a>
+      </div>
+    </div>
+  
+    <div class="box item5"> <!-- Grid / Button back -->
+      <div class="btn">
+        <a ui-sref="form.responsive"> Back </a>
+      </div>
+    </div>
+
+
+
+  </div>
+  

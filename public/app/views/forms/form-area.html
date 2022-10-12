@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div class="box item1">
+    <!-- Grid / Title -->
+    <label>What kind of website are you creating?</label>
+    <hr />
+  </div>
+
+  <div class="box item2">
+    <!-- Grid / Options -->
+    <div class="radio">
+      <label>
+        <input
+          type="radio"
+          ng-model="formData.area"
+          value="real estate"
+          checked
+        />
+        Real Estate
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        <input type="radio" ng-model="formData.area" value="sell clothes" />
+        Sell clothes
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        <input type="radio" ng-model="formData.area" value="hardware store" />
+        Hardware store
+      </label>
+    </div>
+  </div>
+
+  <div class="box item3" id="area">
+    <!-- Grid / Image -->
+    <img src="/assets/img/area.jpg" />
+  </div>
+
+  <div class="box item4">
+    <!-- Grid / Button next -->
+    <div class="btn">
+      <a ui-sref="form.responsive"> Next </a>
+    </div>
+  </div>
+</div>
+
+<div row show-hide-message ng-show="successMsg">
+  <div class="alert alert-success">{{ successMsg }}</div>
+</div>
+
+<br>
+
+
+<div row show-hide-message ng-show="errorMsg">
+  <div class="alert alert-danger">{{ errorMsg }}</div>
+</div>

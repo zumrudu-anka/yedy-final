@@ -1,0 +1,28 @@
+{
+  "name": "yedy",
+  "version": "1.0.0",
+  "description": "Final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edifie/yedy-final.git"
+  },
+  "author": "DT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edifie/yedy-final/issues"
+  },
+  "homepage": "https://github.com/Edifie/yedy-final#readme",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
+}

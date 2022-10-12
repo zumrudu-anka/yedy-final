@@ -1,0 +1,56 @@
+
+<!-- 
+<div class="form-group row">
+  <div class="col-xs-12" class="btnbox-center">
+    <a ui-sref="form.area" class="btn btn-info">
+      <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+    </a>
+    <a ui-sref="form.name" class="btn btn-right btn-info">
+      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+  </div>
+</div> -->
+
+<div class="wrapper">
+  <div class="box item1">
+    <!-- Grid / Title -->
+
+    <label id="title">What's your design of choice?</label>
+    <hr />
+  </div>
+
+  <div class="box item2">
+    <!-- Grid / Options -->
+    <div class="radio">
+      <label>
+        <input type="radio" ng-model="formData.type" value="basic" checked />
+        Basic
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        <input type="radio" ng-model="formData.type" value="responsive" />
+        Responsive
+      </label>
+    </div>
+  </div>
+
+  <div class="box item3" id="responsive">
+    <!-- Grid / Image -->
+    <img src="/assets/img/responsive.jpg" />
+  </div>
+
+  <div class="box item4">
+    <!-- Grid / Button next -->
+    <div class="btn">
+      <a ui-sref="form.name"> Next </a>
+    </div>
+  </div>
+
+  <div class="box item5"> <!-- Grid / Button back -->
+    <div class="btn">
+      <a ui-sref="form.area"> Back </a>
+    </div>
+  </div>
+</div>
