@@ -3,7 +3,7 @@ var Form = require("../models/form");
 module.exports = function (router) {
   // http://localhost:8080/api/forms
 
-  router.post("/form", function (req, res) {
+  router.post("/forms", function (req, res) {
     // res.send('Testing users route');
 
     var form = new Form();

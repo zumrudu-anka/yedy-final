@@ -1,7 +1,7 @@
 
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-angular.module('formApp', ['ngAnimate', 'ui.router'])
+angular.module('formApp', ['ngAnimate', 'ui.router', 'formServices'])
 
 // configuring our routes 
 // =============================================================================
@@ -50,15 +50,46 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
 // our controller for the form
 // =============================================================================
-.controller('formController', function($scope) {
+.controller('formController', function($scope, $http, Form) {
     
     // we will store all of our form data in this object
     $scope.formData = {};
     
     // function to process the form
-    $scope.processForm = function() {
-        
-    };
+    // $scope.processForm = function() {
+
+    // };
+
+    var app = this;
+
+
+    this.regForm = function(formData){
+
+        app.loading = true;
+        app.errorMsg = false;
+
+        Form.create(app.regForm).then(function(formData){
+            if(formData.data.success){
+                app.loading = false;
+
+                //create success message
+                app.successMsg = formData.data.message = "...Redirecting";
+            
+                $timeout(function(){
+                    //delay for 2 seconds after submitting the form
+                    $location.path("/"); //send to home page after submitting
+                }, 2000);
+            }else{
+                //crete error message
+                app.loading = false;
+                app.errorMsg = formData.data.message;
+            }
+        });
+    }
+
+
+
+    
     
 });
 

@@ -1,1 +1,1 @@
-angular.module('formApp', ['ngAnimate', 'ui.router', 'formCtrl']); // Module name and any dependencies
+angular.module('formApp', ['ngAnimate', 'ui.router', 'formCtrl', 'formServices']); // Module name and any dependencies

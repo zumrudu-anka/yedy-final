@@ -19,9 +19,9 @@ app.use('/api', appRoutes); // Use the routes and use from /api file --> http://
 //create connection to the database and check if there is a connection
 mongoose.connect("mongodb://localhost:27017/yedy", function(err){
     if(err){
-        console.log("Not connected to the database " + err);
+        console.log("MongoDB --> Not connected to the database " + err);
     }else{
-        console.log("Successfully connected to MongoDB");
+        console.log("MongoDB --> Successfully connected to MongoDB");
     }
 });
 
@@ -30,5 +30,5 @@ app.get('*', function(req,res){ //'/*'no matter what user does send them to inde
 });
 
 app.listen(port, function(){
-    console.log("Server is running on port " + port);
+    console.log("Server --> Server is running on port " + port);
 });
