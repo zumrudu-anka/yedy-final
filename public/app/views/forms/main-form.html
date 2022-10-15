@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/cerulean/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/form.css">
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/cerulean/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/form.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/navbar.css" />
 
-    
     <!-- JS -->
     <!-- load angular, nganimate, and ui-router -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
     <script src="/app/controllers/formCtrl.js"></script>
-    
-</head>
-<body ng-app="formApp">
-
-<!-- views will be injected here -->
-<div class="container">
-    <div ui-view></div>
-</div>
+  </head>
+  <body ng-app="formApp">
 
 
+    <div class="topnav" id="formNav">
+        <a href="/">
+        <div class="glitch-wrapper">
+            <div class="glitch" data-glitch="YEDY">
+                YEDY
+            </div>
+         </div>
+        </a>
+    </div>
 
-</body>
+    <!-- views will be injected here -->
+    <div class="container">
+      <div ui-view></div>
+    </div>
+  </body>
 </html>

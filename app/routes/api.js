@@ -1,15 +1,17 @@
+var User = require("../models/user");
 var Form = require("../models/form");
-
 
 module.exports = function (router) {
   // http://localhost:8080/api/forms
 
+  /* Route - FORMS */
   router.post("/forms", function (req, res) {
     // res.send('Testing users route');
+
     var form = new Form();
 
     form.area = req.body.area;
-    form.responsive = req.body.responsive;
+    form.type = req.body.type;
     form.name = req.body.name;
     form.tema = req.body.tema;
 
@@ -19,12 +21,11 @@ module.exports = function (router) {
     //   name: req.body.name,
     //   tema: req.body.tema
     // });
-
+    console.log(req.body);
     if (
       req.body.area == null ||
-      req.body.responsive == null ||
       req.body.name == null ||
-      req.body.area == "" ||
+      req.body.type == null ||
       req.body.tema == null
     ) {
       res.json({
@@ -39,6 +40,47 @@ module.exports = function (router) {
           console.log(err);
         } else {
           res.json({ success: true, message: "Form created!" });
+        }
+      });
+    }
+  });
+
+  /* Route - USERS */
+  router.post("/users", function (req, res) {
+    //res.send('Testing users route');
+
+    var user = new User();
+    user.username = req.body.username; // take the request of saving username into user.username
+    user.password = req.body.password;
+    user.email = req.body.email;
+
+    //if the stuff is not provided
+    if (
+      req.body.username == null ||
+      req.body.username == "" ||
+      req.body.password == null ||
+      req.body.password == "" ||
+      req.body.email == null ||
+      req.body.email == ""
+    ) {
+      // check if username is undefined or submitted with blank
+      res.json({
+        success: false,
+        message: "Ensure username, email and password were provided",
+      });
+    } else {
+      user.save(function (err) {
+        //check if there is an error
+        if (err) {
+          //   res.send('Username or Email already exists!');
+          res.json({
+            success: false,
+            message: "Username or Email already exists!",
+          });
+          console.log(err);
+        } else {
+          //   res.send("User created");
+          res.json({ success: true, message: "User created!" });
         }
       });
     }

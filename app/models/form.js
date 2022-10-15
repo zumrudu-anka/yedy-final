@@ -4,7 +4,7 @@ var bcrypt      = require("bcrypt");
 
 var formSchema = new Schema({
   area: { type: String, lowercase: true, required: true },
-  responsive: { type: String, lowercase: true, required: true },
+  type: { type: String, lowercase: true, required: true },
   name: { type: String, required: true },
   tema: { type: String, lowercase: true, required: true },
 });

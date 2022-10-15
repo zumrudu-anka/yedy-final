@@ -24,29 +24,33 @@
 
     <!-- Main Angular Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.js"></script>
+
 
     <!-- Angular Config -->
-    <script src="/app/app.js"></script>
-    <script src="/app/routes.js"></script>
-
-    <!-- Angular Services -->
-    <script src="/app/services/formServices.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
 
     <!-- Angular Controllers -->
-    <script src="/app/controllers/formCtrl.js"></script>
+    <script src="app/controllers/formCtrl.js"></script>
+    <script src="app/controllers/userCtrl.js"></script>
+
+    <!-- Angular Services -->
+    <script src="app/services/userServices.js"></script>
 
     <title>YEDY</title>
   </head>
 
-  <body>
+  <body ng-app="userApp">
     <!-- Navbar -->
 
     <div class="topnav" id="myTopnav">
       <img src="assets/img/letter-y.png" />
       <a href="/" class="logo">YEDY</a>
-      <a href="#about" class="middle">About</a>
+      <a href="/about" class="middle">About</a>
       <a href="#contact" class="middle">Contact</a>
-      <a href="#resources" class="middle" class="resources">Resources</a>
+      <a href="/register" class="middle">Register</a>
       <a href="javascript:void(0);" class="icon" onclick="responsiveNav()">
         <i class="fa fa-bars"></i>
       </a>
@@ -97,5 +101,8 @@
         }
       }
     </script>
+
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.js"></script>
   </body>
 </html>

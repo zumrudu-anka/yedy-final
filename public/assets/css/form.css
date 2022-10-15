@@ -3,9 +3,8 @@
 }
 
 body {
-  background-color: white;
-  padding-top: 50px;
-  font-family: "Poppins", sans-serif ;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
 }
 
 pre {
@@ -22,7 +21,6 @@ pre {
   grid-template-rows: repeat(4, 120px);
   justify-content: center;
   justify-content: center;
-  
 }
 
 .box {
@@ -70,8 +68,6 @@ img {
   padding-top: 0px;
 }
 
-
-
 .item1 label {
   font-size: 35px;
   padding-left: 30px;
@@ -86,16 +82,13 @@ img {
   padding-top: 25px;
 }
 
-
-#name.item2{
+#name.item2 {
   padding-top: 20px;
   width: 300px;
 }
 
-
 /* RADIO
 ============================================================================= */
-
 
 input[type="radio"] {
   background-color: white;
@@ -105,18 +98,18 @@ input[type="radio"] {
   border-radius: 50%;
 }
 
-.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
   position: absolute;
   margin-left: -30px;
   margin-top: 4px \9;
 }
 
-.radio label{
+.radio label {
   font-weight: 300;
 }
-
-
-
 
 /* BUTTON
 ============================================================================= */
@@ -140,8 +133,8 @@ input[type="radio"] {
   background-color: #4042eb;
 }
 
-#tema.btn{
-background-color: #1B1091;
+#tema.btn {
+  background-color: #1b1091;
 }
 /* FORM
 ============================================================================= */
