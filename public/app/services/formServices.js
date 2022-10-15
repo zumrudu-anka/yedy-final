@@ -1,12 +1,12 @@
-angular.module('formServices', [])
-.factory('Form', function($http){
-    formFactory = {};
+// angular.module('formServices', [])
+// .factory('Form', function($http){
+//     formFactory = {};
 
-    formFactory.create = function(formData){
-        return $http.post('/api/forms', formData);
-    }
-    return formFactory;
-});
+//     formFactory.create = function(formData){
+//         return $http.post('/api/forms', formData);
+//     }
+//     return formFactory;
+// });
 
 
 
@@ -17,3 +17,15 @@ angular.module('formServices', [])
 
 
 // })
+
+
+angular.module('formServices',[])
+.factory('Form', function($http){
+    var formFactory = {};
+
+    formFactory.create = function(formData){
+        return $http.post('/api/forms', formData);
+    }
+
+    return formFactory;
+});

@@ -10,3 +10,15 @@ var formSchema = new Schema({
 });
 
 module.exports = mongoose.model('Form', formSchema);
+
+
+// var mongoose = require('mongoose');
+
+// var Form = mongoose.model('Form1', {
+//   area: { type: String, lowercase: true, required: true },
+//   responsive: { type: String, lowercase: true, required: true },
+//   name: { type: String, required: true },
+//   tema: { type: String, lowercase: true, required: true }
+// });
+
+// module.exports = { Form }

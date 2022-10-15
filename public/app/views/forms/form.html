@@ -3,7 +3,7 @@
     <div id="form-container">
 
       <!-- use ng-submit to catch the form submission and use our Angular function -->
-      <form name="signupform" novalidate ng-submit="regForm(formData)">
+      <form method="post" name="signupform" novalidate ng-submit="regForm(formData);">
         <!-- our nested state views will be injected here  -->
         <a ui-sref="form.area"></a>
         

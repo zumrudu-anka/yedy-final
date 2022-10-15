@@ -1,3 +1,5 @@
+<form ng-submit="regForm(formData)" ng-controller="formCtrl">
+
 <div class="wrapper">
   <div class="box item1">
     <!-- Grid / Title -->
@@ -35,10 +37,8 @@
   <div class="box item4">
     <!-- Grid / Button next -->
     <div class="btn" id="tema">
-      <a ui-sref=""> Create </a>
-      <form ng-submit="regForm(formData)">
-        <button type="submit">Submit</button>
-      </form>
+      <!-- <a ui-sref=""> Create </a> -->
+      <button type="submit">Submit</button>
     </div>
   </div>
 
@@ -49,3 +49,4 @@
     </div>
   </div>
 </div>
+</form>
