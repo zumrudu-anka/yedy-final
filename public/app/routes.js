@@ -2,8 +2,8 @@ angular.module('appRoutes', ['ngRoute'])  // module name and any dependencies
 .config(function($routeProvider, $locationProvider){
     $routeProvider
     
-    .when('/', { // when user type in default location  
-        templateUrl: 'app/views/index.html'
+    .when('/home', { // when user type in default location  
+        templateUrl: 'app/views/home.html'
     })
 
     .when('/register',{
@@ -16,7 +16,7 @@ angular.module('appRoutes', ['ngRoute'])  // module name and any dependencies
         templateUrl: 'app/views/pages/about.html'
     })
 
-    .otherwise({ redirectTo: '/'});
+    .otherwise({ redirectTo: '/home'});
 
     $locationProvider.html5Mode({
         enabled: true,

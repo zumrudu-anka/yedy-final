@@ -1,5 +1,3 @@
-
-
 angular.module('userServices', [])
 .factory('User', function($http){
     userFactory = {};

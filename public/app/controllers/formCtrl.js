@@ -40,6 +40,11 @@ angular
       .state("form.tema", {
         url: "/tema",
         templateUrl: "form-tema.html",
+      })
+
+      .state("form.home",{
+        url:"/home",
+        templateUrl: "index.html"
       });
 
     // catch all route

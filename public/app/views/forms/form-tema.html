@@ -1,3 +1,4 @@
+<html>
 <form ng-submit="regForm(formData)" ng-controller="formCtrl">
 
 <div class="wrapper">
@@ -38,7 +39,9 @@
     <!-- Grid / Button next -->
     <div class="btn" id="tema">
       <!-- <a ui-sref=""> Create </a> -->
-      <button type="submit">Submit</button>
+      <button type="submit" onclick="
+      window.setTimeout(function(){
+        window.location.href='/';}, 2000);">Create</button>
     </div>
   </div>
 
@@ -50,3 +53,5 @@
   </div>
 </div>
 </form>
+
+</html>

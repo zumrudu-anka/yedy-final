@@ -1,9 +1,8 @@
 angular
   .module("userControllers", ['userServices']) //for this module to work, need to add dependency in app.js to userApp.
 
-  .controller("regCtrl", function ($http, $location, $timeout, User) {
+  .controller("regCtrl", function ($http, $location, $timeout, User,) {
     //for the controller to work, need to add to route as controller
-
     var app = this;
 
     this.regUser = function (regData) {
