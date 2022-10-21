@@ -6,6 +6,7 @@ angular
     var app = this;
 
     this.regUser = function (regData) {
+
       app.loading = true;
 
       app.errorMsg = false;
@@ -21,14 +22,14 @@ angular
         if (data.data.success) {
           app.loading = false;
           //create success message
-          app.successMsg = data.data.message = "...Redirecting";
+          app.successMsg = data.data.message + " Redirecting.."
           // redirect to home page
           //   <div class="alert alert-success">{{ register.successMsg }}</div>
 
           $timeout(function () {
             //delay for 2 seconds after submitting the form
             $location.path("/"); // after submitting send to home page
-          }, 2000);
+          }, 3000);
         } else {
           // create an error message
           app.loading = false;

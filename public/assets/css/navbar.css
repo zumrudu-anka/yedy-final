@@ -1,35 +1,32 @@
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: white;
-  overflow: hidden;
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
   padding-top: 20px;
+
   background: #ffffff;
   background: -webkit-linear-gradient(0deg, #ffffff 0%, #e6edfc 100%);
   background: linear-gradient(0deg, #ffffff 0%, #e6edfc 100%);
 }
 
 /* Style the links inside the navigation bar */
-.topnav a img {
+.topnav a {
   float: left;
   display: block;
+
+  font-weight: 300;
   color: black;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
+  padding: 27px;
 }
 
 /* Change the color of links on hover */
-.topnav a.middle:hover {
+.topnav a.middle:hover,
+a.right:hover {
   color: #7d97f4;
-}
-
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  background-color: #7d97f4;
-  color: white;
-  height: 20px;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -39,119 +36,38 @@
 
 .topnav img {
   float: left;
+
   padding: 18px 5px;
-  padding-left: 110px;
+  margin-left: 110px;
+
   height: 32px;
 }
 
 .topnav a.logo {
-  float: left;
-
-  font-weight: 600;
+  font-weight: 700;
   font-size: 40px;
-  line-height: 70px;
   text-decoration: none;
 
-  padding-right: 60px;
-  padding-left: 10px;
-  /* identical to box height */
-  color: black;
+  padding: 5px 60px 0 10px;
 }
 
-.topnav a.middle {
-  font-weight: 300;
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 27px;
-
-  text-decoration: none;
-  font-size: 17px;
+#login{
+  float:right;
+  font-weight: 500;
+  margin-right: 80px;
 }
 
-/* FORM
-============================================================================= */
-#formNav {
-  padding-left: 156px;
-  padding-top: 32px;
-  margin-top: 0;
+#logout{
+  float:right;
 }
 
-#formNav a{
-  text-decoration: none;
-}
-.glitch-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  text-align: center;
-}
-
-.glitch {
-  position: relative;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 1.2;
-  color: black;
-  letter-spacing: 5px;
-  z-index: 1;
-}
-
-
-
-.glitch:before,
-.glitch:after {
-  display: block;
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
-}
-
-.glitch:before {
-  animation: glitch-color 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #BDD1FB;
-  z-index: -1;
-}
-
-.glitch:after {
-  animation: glitch-color 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-  color: #fe7366;
-  z-index: -2;
-}
-
-@keyframes glitch-color {
-  0% {
-     transform: translate(0);
-  }
-
-  20% {
-     transform: translate(-2px, 2px);
-  }
-
-  40% {
-     transform: translate(-2px, -2px);
-  }
-
-  60% {
-     transform: translate(2px, 2px);
-  }
-
-  80% {
-     transform: translate(2px, -2px);
-  }
-
-  to {
-     transform: translate(0);
-  }
+#form-logo {
+  margin-left: 152px;
+  padding-top: 6px;
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 845px) {
   .topnav a.middle {
     display: none;
   }
@@ -159,12 +75,11 @@
     float: right;
     display: block;
     color: black;
-    padding-top: 27px;
   }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 845px) {
   .topnav.responsive a.logo {
     position: relative;
   }
@@ -172,17 +87,22 @@
     position: fixed;
     right: 0;
     top: 0;
-    padding-right: 8px;
     color: black;
-    padding-top: 55px;
+    padding: 27px;
+    padding-top: 47px;
   }
   .topnav.responsive a.middle {
-    position: relative;
+    position: static;
     float: none;
     text-align: right;
     display: flow-root;
     font-weight: 500;
-
     padding-top: 10px;
+    margin-right: 60px;
+  }
+
+  #login #logout{
+    margin: 0;
+    margin-right: 60px;
   }
 }

@@ -1,58 +1,102 @@
-<div class="page-header">
-  <h1>User Register</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<form ng-submit="register.regUser(regData)">
-  <!-- Email -->
-  <label>Email</label>
-  <input
-    class="form-control"
-    type="text"
-    name="email"
-    placeholder="Please enter email"
-    ng-model="register.regData.email"
-  />
-  <br />
-  <!-- Username -->
-  <label>Username</label>
-  <input
-    class="form-control"
-    type="text"
-    name="username"
-    placeholder="Please enter username"
-    ng-model="register.regData.username"
-  />
-  <br />
-  <!-- Password -->
-  <label>Password</label>
-  <input
-    class="form-control"
-    type="text"
-    name="password"
-    placeholder="Please enter password"
-    ng-model="register.regData.password"
-  />
-  <br />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/register.css" />
 
-  <button class="btn btn-primary" type="submit">Register</button>
-</form>
+  </head>
 
-<br />
+  <body>
+    <!-- GRID LEFT -->
 
-<div class="jumbotron text-center" ng-show="register.loading">
-    <span class="glyphicon glyphicon-repeat spinner"></span>
-    <p>Loading...</p>
-</div>
+    <div class="grid-container">
+      <div class="grid-left">
+        <img src="assets/img/register.png" />
+      </div>
+
+      <!-- VERTICAL LINE -->
+      <div class="vl"></div>
+
+      <!-- GRID RIGHT -->
+      <div class="grid-right">
+        <form ng-submit="register.regUser(regData)">
+          <h1>Sign Up</h1>
+
+          <!-- Username -->
+          <div class="input-icons" >
+            <span class="input-item"><i class="bi bi-person icon"></i></span>
+
+            <input
+              class="input-field"
+              type="text"
+              name="username"
+              placeholder="Username"
+              ng-model="register.regData.username"
+              required
+              
+            />
+          </div>
+
+          <br />
+          <br />
+
+          <!-- Email -->
+          <div class="input-icons">
+            <span class="input-item"><i class="bi bi-envelope icon"></i></span>
+
+            <input
+              class="input-field"
+              type="text"
+              name="email"
+              placeholder="Email"
+              ng-model="register.regData.email"
+              required
+            />
+          </div>
+
+          <br />
+          <br />
+
+          <!-- Password -->
+          <div class="input-icons">
+            <span class="input-item"><i class="bi bi-key icon"></i></span>
+
+            <input
+              class="input-field"
+              type="password"
+              name="password"
+              placeholder="Password"
+              ng-model="register.regData.password"
+              required
+            />
+          </div>
+          <br />
+          <br />
+
+          <button class="btn" id="register" type="submit">Register</button>
+        </form>
+
+
+
+        <!-- POPUPS -->
 
 
 
 
-<div row show-hide-message ng-show="register.successMsg">
-  <div class="alert alert-success">{{ register.successMsg }}</div>
-</div>
+        <div row show-hide-message ng-show="register.successMsg">
+          <div class="alert alert-success">{{ register.successMsg }}</div>
+        </div>
 
-<br />
+        <br />
 
-<div row show-hide-message ng-show="register.errorMsg">
-  <div class="alert alert-danger">{{ register.errorMsg }}</div>
-</div>
+        <div row show-hide-message ng-show="register.errorMsg">
+          <div class="alert alert-danger">{{ register.errorMsg }}</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

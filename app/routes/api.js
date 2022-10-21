@@ -1,10 +1,14 @@
 var User = require("../models/user");
 var Form = require("../models/form");
+var bcrypt = require("bcrypt");
+var jwt = require("jsonwebtoken");
+var secret = "harrypotter";
+
 
 module.exports = function (router) {
-  // http://localhost:8080/api/forms
+  /**************************** Route - FORMS ******************************************/
 
-  /* Route - FORMS */
+  // http://localhost:8080/api/forms
   router.post("/forms", function (req, res) {
     // res.send('Testing users route');
 
@@ -45,7 +49,9 @@ module.exports = function (router) {
     }
   });
 
-  /* Route - USERS */
+  /**************************** Route - USERS ******************************************/
+
+  // http://localhost:8080/api/users
   router.post("/users", function (req, res) {
     //res.send('Testing users route');
 
@@ -66,7 +72,7 @@ module.exports = function (router) {
       // check if username is undefined or submitted with blank
       res.json({
         success: false,
-        message: "Ensure username, email and password were provided",
+        message: "Ensure username, email and password were provided.",
       });
     } else {
       user.save(function (err) {
@@ -84,6 +90,75 @@ module.exports = function (router) {
         }
       });
     }
+  });
+
+  /**************************** Route - USER LOGIN ******************************************/
+
+  //http://localhost:8080/api/authenticate
+  router.post("/authenticate", function (req, res) {
+    User.findOne({ username: req.body.username })
+      .select("email username password")
+      .exec(function (err, user) {
+        if (err) throw err;
+
+        if (!user) {
+          res.json({ success: false, message: "Could not authenticate user." });
+        } else if (user) {
+          if (req.body.password) {
+            var validPassword = user.comparePassword(req.body.password);
+          } else {
+            res.json({ success: false, message: "No password provided." });
+          }
+
+          if (!validPassword) {
+            res.json({
+              success: false,
+              message: "Could not authenticate password",
+            });
+          } else {
+            var token = jwt.sign(
+              { username: user.username, email: user.email },
+              secret,
+              { expiresIn: '24h' }
+            ); //don't store password for security reasons
+            res.json({
+              success: true,
+              message: "User authenticated!",
+              token: token,
+            });
+          }
+        }
+      });
+  });
+
+  /**************************** Route - GET THE CURRENT USER ******************************************/
+
+  // middleware ex press
+  router.use(function (req, res, next) {
+    //get it from request || get it from url || get it from headers
+
+    var token = req.body.token || req.body.query || req.headers['x-access-token'];
+
+    if (token) {
+      //verify token
+      jwt.verify(token, secret, function (err, decoded) {
+        if (err) {
+          res.json({ success: false, message: "Token invalid!" });
+        } else {
+          req.decoded = decoded;
+          next();
+        }
+      });
+    } else {
+      res.json({ success: false, message: "No token provided!" });
+    }
+  });
+
+  //could be the part where send to forms
+  // http://localhost:8080/api/me
+  router.post('/currentUser', function (req, res) {
+    // res.send(req.decoded);
+    res.send(req.decoded);
   });
 
   return router;

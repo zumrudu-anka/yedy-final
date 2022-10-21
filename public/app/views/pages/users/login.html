@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/register.css" />
+  </head>
+
+  <body>
+    <!-- GRID LEFT -->
+
+    <div class="grid-container">
+      <div class="grid-left">
+        <div class="text"></div>
+        <img src="assets/img/login.jpg" />
+      </div>
+
+      <!-- VERTICAL LINE -->
+      <div class="vl"></div>
+
+      <!-- GRID RIGHT -->
+      <div class="grid-right">
+        <form ng-submit="main.doLogin(loginData)">
+          <h1 style="text-align: center">Login</h1>
+
+          <!-- Username -->
+          <div class="input-icons">
+            <span class="input-item"><i class="bi bi-person icon"></i></span>
+
+            <input
+              class="input-field"
+              type="text"
+              name="username"
+              placeholder="Username"
+              ng-model="main.loginData.username"
+              required
+            />
+          </div>
+
+          <br />
+          <br />
+
+          <!-- Email -->
+
+          <!-- Password -->
+          <div class="input-icons">
+            <span class="input-item"><i class="bi bi-key icon"></i></span>
+
+            <input
+              class="input-field"
+              type="password"
+              name="password"
+              placeholder="Password"
+              ng-model="main.loginData.password"
+            />
+          </div>
+          <br />
+          <br />
+
+          <button class="btn" id="register" type="submit">Sign in</button>
+        </form>
+
+        <div row show-hide-message ng-show="main.successMsg">
+          <div class="alert alert-success">{{ main.successMsg }}</div>
+        </div>
+
+        <br />
+
+        <div row show-hide-message ng-show="main.errorMsg">
+          <div class="alert alert-danger">{{ main.errorMsg }}</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

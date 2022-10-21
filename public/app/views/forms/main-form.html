@@ -7,6 +7,12 @@
       content="width=device-width, initial-scale=1.0"
     />
 
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS -->
     <link
       rel="stylesheet"
@@ -16,29 +22,39 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/navbar.css" />
 
     <!-- JS -->
-    <!-- load angular, nganimate, and ui-router -->
+    <!-- Main Angular Files -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+
+    <!-- Angular Controllers -->
     <script src="/app/controllers/formCtrl.js"></script>
   </head>
+
   <body ng-app="formApp">
-
-
-    <div class="topnav" id="formNav">
-        <a href="/">
-        <div class="glitch-wrapper">
-            <div class="glitch" data-glitch="YEDY">
-                YEDY
-            </div>
-         </div>
-        </a>
+    <!-- NAVBAR -->
+    <div class="topnav" id="myTopnav">
+      <a href="/" class="logo" id="form-logo">YEDY</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
 
     <!-- views will be injected here -->
     <div class="container">
       <div ui-view></div>
     </div>
-  </body>
 
+    <!-- NAVBAR SCRIPT -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
 </html>
