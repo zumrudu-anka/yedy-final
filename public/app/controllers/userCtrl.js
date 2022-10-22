@@ -28,8 +28,8 @@ angular
 
           $timeout(function () {
             //delay for 2 seconds after submitting the form
-            $location.path("/"); // after submitting send to home page
-          }, 3000);
+            $location.path("/login"); // after submitting send to home page
+          }, 2000);
         } else {
           // create an error message
           app.loading = false;

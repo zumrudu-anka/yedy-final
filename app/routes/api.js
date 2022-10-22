@@ -59,6 +59,7 @@ module.exports = function (router) {
     user.username = req.body.username; // take the request of saving username into user.username
     user.password = req.body.password;
     user.email = req.body.email;
+    user.name = req.body.name;
 
     //if the stuff is not provided
     if (
@@ -67,7 +68,9 @@ module.exports = function (router) {
       req.body.password == null ||
       req.body.password == "" ||
       req.body.email == null ||
-      req.body.email == ""
+      req.body.email == "" || 
+      req.body.name == null ||
+      req.body.name == ""
     ) {
       // check if username is undefined or submitted with blank
       res.json({
@@ -79,10 +82,12 @@ module.exports = function (router) {
         //check if there is an error
         if (err) {
           //   res.send('Username or Email already exists!');
-          res.json({
-            success: false,
-            message: "Username or Email already exists!",
-          });
+          if(err.errors.name){
+            res.json({
+              success: false,
+              message: err.errors.name.message,
+            });
+          }
           console.log(err);
         } else {
           //   res.send("User created");
@@ -90,6 +95,8 @@ module.exports = function (router) {
         }
       });
     }
+    
+    console.log(req.body);
   });
 
   /**************************** Route - USER LOGIN ******************************************/

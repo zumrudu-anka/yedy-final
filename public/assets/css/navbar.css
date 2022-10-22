@@ -59,7 +59,10 @@ a.right:hover {
 
 #logout{
   float:right;
+  font-weight: 500;
+  margin-right: 80px;
 }
+
 
 #form-logo {
   margin-left: 152px;

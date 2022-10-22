@@ -1,8 +1,23 @@
 var mongoose = require("mongoose"); //invoke mongo's moduke
 var Schema = mongoose.Schema;
-var bcrypt = require("bcrypt");
+var bcrypt = require("bcrypt"); // encryption for password
+var titilize = require("mongoose-title-case"); //change the name in case of all the latters are capital, save it as title case for database. Ex: DILAN TASKIN --> DB: Dilan Taskin
+var validate = require("mongoose-validator");
+
+var nameValidator = [
+  validate({
+    validator: "matches",
+    arguments:
+      /^(([a-zA-Z]{2,})+[ ]+([a-zA-Z]{2,})+)+$/
+  }),
+];
 
 var UserSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    validate: nameValidator,
+  },
   username: {
     type: String,
     lowercase: true,
@@ -31,13 +46,10 @@ UserSchema.pre("save", function (next) {
     console.log(hash);
     next();
   });
+});
 
-  // bcrypt.genSalt(saltRounds, function(err,salt){
-  //     bcrypt.hash(user.password, salt, function(err, hash){
-  //         user.password = hash;
-  //         console.log(hash);
-  //     });
-  // });
+UserSchema.plugin(titilize, {
+  paths: ["name"],
 });
 
 UserSchema.methods.comparePassword = function (password) {

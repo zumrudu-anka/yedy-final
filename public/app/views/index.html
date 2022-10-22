@@ -50,12 +50,14 @@
     <div class="topnav" id="myTopnav">
       <img src="assets/img/letter-y.png" />
       <a href="/" class="logo">YEDY</a>
+
       <a href="/about" class="middle">About</a>
       <a href="#contact" class="middle">Contact</a>
+      <a ng-show="main.isLoggedIn" class="middle" href="/profile">Profile</a>
+
       <a ng-show="!main.isLoggedIn" href="/register" class="middle">Register</a>
       <a ng-show="!main.isLoggedIn" href="/login" class="middle" id="login">Login</a>
-      <a ng-show="main.isLoggedIn" href="/profile" style="text-decoration:line-through;">{{ main.username }}</a>
-      <a href="#" class="middle" id=logout" ng-click="main.logout();">Logout</a>
+      <a ng-show="main.isLoggedIn "href="#" class="middle" id="logout" ng-click="main.logout();">Logout ({{ main.username}})</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>

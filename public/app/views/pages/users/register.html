@@ -7,7 +7,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/register.css" />
-
   </head>
 
   <body>
@@ -26,8 +25,24 @@
         <form ng-submit="register.regUser(regData)">
           <h1>Sign Up</h1>
 
+          <!-- Name -->
+          <div class="input-icons">
+            <span class="input-item"><i class="bi bi-card-text icon"></i></span>
+
+            <input
+              class="input-field"
+              type="text"
+              name="name"
+              placeholder="Name"
+              ng-model="register.regData.name"
+              required
+            />
+          </div>
+
+          <br />
+          <br />
           <!-- Username -->
-          <div class="input-icons" >
+          <div class="input-icons">
             <span class="input-item"><i class="bi bi-person icon"></i></span>
 
             <input
@@ -37,7 +52,6 @@
               placeholder="Username"
               ng-model="register.regData.username"
               required
-              
             />
           </div>
 
@@ -77,15 +91,10 @@
           <br />
           <br />
 
-          <button class="btn" id="register" type="submit">Register</button>
+            <button class="btn" id="register" type="submit">Register</button>
         </form>
 
-
-
         <!-- POPUPS -->
-
-
-
 
         <div row show-hide-message ng-show="register.successMsg">
           <div class="alert alert-success">{{ register.successMsg }}</div>
