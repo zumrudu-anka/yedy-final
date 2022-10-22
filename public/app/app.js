@@ -1,4 +1,4 @@
-angular.module('userApp', ['appRoutes', 'userControllers', 'userServices', 'ngAnimate', 'mainController','authServices']) // module name and any dependencies // ngRoute
+angular.module('userApp', ['appRoutes', 'userControllers', 'userServices', 'ngRoute', 'mainController','authServices']) // module name and any dependencies // ngRoute
 
 
 .config(function($httpProvider){
