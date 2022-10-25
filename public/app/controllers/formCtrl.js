@@ -64,7 +64,7 @@ angular
         .success(function (data, status) {
           $timeout(function () {
             //delay for 2 seconds after submitting the form
-            $location.path("/"); // after submitting send to home page
+            $location.path("/home"); // after submitting send to home page
           }, 2000);
           console.log("success");
         }),

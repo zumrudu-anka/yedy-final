@@ -1,7 +1,7 @@
 angular
   .module("userControllers", ['userServices']) //for this module to work, need to add dependency in app.js to userApp.
 
-  .controller("regCtrl", function ($http, $location, $timeout, User,) {
+  .controller("regCtrl", function ($location, $timeout, User,) {
     //for the controller to work, need to add to route as controller
     var app = this;
 
@@ -22,7 +22,7 @@ angular
         if (data.data.success) {
           app.loading = false;
           //create success message
-          app.successMsg = data.data.message + " Redirecting.."
+          app.successMsg = data.data.message + " Redirecting..";
           // redirect to home page
           //   <div class="alert alert-success">{{ register.successMsg }}</div>
 
@@ -33,6 +33,7 @@ angular
         } else {
           // create an error message
           app.loading = false;
+          if(data.data.message)
           app.errorMsg = data.data.message;
         }
       });

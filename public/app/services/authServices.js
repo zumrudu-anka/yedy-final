@@ -69,9 +69,9 @@ angular
 
  // attach tokens to every request
 .factory('AuthInterceptors', function(AuthToken){
-    var AuthInterceptorsFactory = {};
+    var authInterceptorsFactory = {};
 
-    AuthInterceptorsFactory.request = function(config){
+    authInterceptorsFactory.request = function(config){
         var token = AuthToken.getToken(); //get the token
 
         //if token is does exists, assign it to the headers
@@ -82,7 +82,7 @@ angular
     }
 
 
-    return AuthInterceptorsFactory;
+    return authInterceptorsFactory;
 });
 
 

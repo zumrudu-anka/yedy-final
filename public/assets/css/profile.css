@@ -1,0 +1,19 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.header{
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+td{
+    padding-left: 40px;
+}
+
+.td-title{
+    font-weight: bold; 
+    font-size: 30px;
+    padding-bottom: 40px;
+}

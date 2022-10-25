@@ -34,7 +34,13 @@ var app = angular
         authenticated: true
       })
 
-      .otherwise({ redirectTo: "/home" });
+      .when('/error', {
+        templateUrl: "app/views/pages/error.html",
+      })
+
+
+
+      .otherwise({ redirectTo: "/error" });
 
     $locationProvider.html5Mode({
       enabled: true,
@@ -50,7 +56,7 @@ var app = angular
       if(next.$$route.authenticated == true){ //if they need to be logged in
           if(!Auth.isLoggedIn()){ //if user not logged in
             event.preventDefault(); //prevent to go to that route
-            $location.path('/home'); // and redirect them to homepage
+            $location.path('/register'); // and redirect them to homepage
           }
       }else if (next.$$route.authenticated == false){ //if they dont need to be logged in
           if(Auth.isLoggedIn()){

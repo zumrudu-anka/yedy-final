@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Edifie/yedy-final#readme",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.30",
     "angular": "^1.8.2",
     "angular-route": "^1.8.3",
     "bcrypt": "^5.1.0",

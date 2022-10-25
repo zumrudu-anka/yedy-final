@@ -140,7 +140,7 @@ module.exports = function (router) {
 
   /**************************** Route - GET THE CURRENT USER ******************************************/
 
-  // middleware ex press
+  // middleware express
   router.use(function (req, res, next) {
     //get it from request || get it from url || get it from headers
 

@@ -25,7 +25,7 @@ angular
       } else {
         console.log("Failure: User is NOT logged in");
         app.isLoggedIn = false;
-        app.username = '';
+        app.username = null;
         app.loadme = true;
       }
     });
@@ -48,9 +48,9 @@ angular
 
           $timeout(function () {
             //delay for 2 seconds after submitting the form
-            $location.path("/about"); // after submitting send to home page
+            $location.path("/profile"); // after submitting send to home page
             //clear the credentials in the login form after logged in
-            app.loginData = '';
+            app.loginData = null;
             app.successMsg = false;
           }, 2000);
         } else {
@@ -63,8 +63,8 @@ angular
 
     this.logout = function () {
       Auth.logout();
-      $location.path("/logout");
-
+      // $location.path("/logout");
+      
       $timeout(function () {
         //delay for 2 seconds after submitting the form
         $location.path("/home"); // after submitting send to home page

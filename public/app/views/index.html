@@ -28,19 +28,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
 
     <!-- Angular Config -->
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
+    <script src="app/formRoutes.js"></script>
 
     <!-- Angular Controllers -->
     <script src="app/controllers/formCtrl.js"></script>
     <script src="app/controllers/userCtrl.js"></script>
     <script src="app/controllers/mainCtrl.js"></script>
+    
 
     <!-- Angular Services -->
     <script src="app/services/userServices.js"></script>
     <script src="app/services/authServices.js"></script>
+    <script src="app/services/formServices.js"></script>
 
     <title>YEDY</title>
   </head>
@@ -49,7 +53,7 @@
     <!-- Navbar -->
     <div class="topnav" id="myTopnav">
       <img src="assets/img/letter-y.png" />
-      <a href="/" class="logo">YEDY</a>
+      <a href="/home" class="logo">YEDY</a>
 
       <a href="/about" class="middle">About</a>
       <a href="#contact" class="middle">Contact</a>
