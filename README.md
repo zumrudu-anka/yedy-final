@@ -30,4 +30,4 @@ Type this on console to run. This will start the **server.js** file.
 
 ``nodemon server``
 
-In order to see changes in the project, you need to save the file first and reflesh de page on the browser.
+In order to see changes in the project, you need to save the file first and reflesh the page on the browser.
