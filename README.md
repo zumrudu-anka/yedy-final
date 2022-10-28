@@ -36,7 +36,11 @@ In order to see changes in the project, you need to save the file first and refl
 
 Can be downloaded in [here](https://www.mongodb.com/docs/manual/installation/).
 
-To login to MongoDB write this URI for a new connection. 
+## Install MongoDB Compass (GUI for MongoDB)
+
+Compass allows to explore and manipulate database in MongoDB. Can be downloaded in [here](https://www.mongodb.com/try/download/compass).
+
+To login to MongoDB write this URI for a new connection,
 
 ``mongodb://localhost:27017``
 
