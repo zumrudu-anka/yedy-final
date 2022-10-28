@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  margin: 0px 130px;
+  margin: 40px 130px;
   height: 400px;
   width: 85%;
 }
@@ -22,15 +22,11 @@ p {
   margin-top: 50px;
 }
 
-td {
-  padding-left: 40px;
-}
-
 .td-title {
   font-weight: bold;
   font-size: 30px;
-  padding-bottom: 40px;
-  margin-left: 120px;
+  margin-left: 135px;
+  margin-bottom: 0;
 }
 
 /* BUTTON */
@@ -52,6 +48,11 @@ button {
   font-size: 25px;
   text-align: center;
 
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#tema button{
+  background: #160d89;
 }
 
 /* GRID */
@@ -62,6 +63,8 @@ button {
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 20px;
   height: 700px;
+
+  
 }
 
 .grid-left {
@@ -72,13 +75,14 @@ button {
 .grid-right {
   grid-column: 2/7;
   grid-row: 1;
-  margin-top: 60px;
+  margin-top: 45px;
 }
 
 .grid-left img {
   width: auto;
   height: 340px;
   border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 

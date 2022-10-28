@@ -14,6 +14,7 @@
           ng-model="formData.area"
           value="real estate"
           checked
+          ng-required="!formData.area"
         />
         Real Estate
       </label>
@@ -21,14 +22,14 @@
 
     <div class="radio">
       <label>
-        <input type="radio" ng-model="formData.area" value="sell clothes" />
+        <input type="radio" ng-model="formData.area" value="sell clothes"         ng-required="!formData.area" />
         Sell clothes
       </label>
     </div>
 
     <div class="radio">
       <label>
-        <input type="radio" ng-model="formData.area" value="hardware store" />
+        <input type="radio" ng-model="formData.area" value="hardware store"         ng-required="!formData.area" />
         Hardware store
       </label>
     </div>
@@ -41,9 +42,7 @@
 
   <div class="box item4">
     <!-- Grid / Button next -->
-    <div class="btn">
-      <a ui-sref="form.responsive"> Next </a>
-    </div>
+    <a> <button ui-sref="form.responsive">Next</button></a>
   </div>
 </div>
 

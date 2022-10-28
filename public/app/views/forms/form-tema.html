@@ -1,58 +1,58 @@
-<html>
-<form ng-submit="regForm(formData)" ng-controller="formCtrl">
+    <div class="wrapper">
+      <div class="box item1">
+        <!-- Grid / Title -->
+        <label>What's your tema of choice?</label>
+        <hr />
+      </div>
 
-<div class="wrapper">
-  <div class="box item1">
-    <!-- Grid / Title -->
-    <label>What's your tema of choice?</label>
-    <hr />
-  </div>
+      <div class="box item2">
+        <!-- Grid / Options -->
+        <div class="radio">
+          <label>
+            <input
+              type="radio"
+              ng-model="formData.tema"
+              value="basic"
+              checked
+            />
+            Basic
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-model="formData.tema" value="boho" />
+            Boho
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-model="formData.tema" value="minimal" />
+            Minimal
+          </label>
+        </div>
+      </div>
 
-  <div class="box item2">
-    <!-- Grid / Options -->
-    <div class="radio">
-      <label>
-        <input type="radio" ng-model="formData.tema" value="basic" checked />
-        Basic
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" ng-model="formData.tema" value="boho" />
-        Boho
-      </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" ng-model="formData.tema" value="minimal" />
-        Minimal
-      </label>
-    </div>
-  </div>
+      <div class="box item3" id="area">
+        <!-- Grid / Image -->
+        <img src="/assets/img/tema.jpg" />
+      </div>
 
-  <div class="box item3" id="area">
-    <!-- Grid / Image -->
-    <img src="/assets/img/tema.jpg" />
-  </div>
-
-  <div class="box item4">
-    <!-- Grid / Button next -->
-    <div class="btn" id="tema">
-      <!-- <a ui-sref=""> Create </a> -->
-      <button type="submit" onclick="
+      <div class="box item4">
+        <!-- Grid / Button next -->
+        <!-- <a ui-sref=""> Create </a> -->
+          <button
+            id="tema"
+            type="submit"
+            onclick="
       window.setTimeout(function(){
-        window.location.href='/home'; window.close();}, 2000);">Create</button>
+        window.location.href='/home'; window.close();}, 2000);"
+          >
+            Create
+          </button>
+      </div>
 
+      <div class="box item5">
+        <!-- Grid / Button back -->
+        <a> <button ui-sref="form.name">Back</button></a>
+      </div>
     </div>
-  </div>
-
-  <div class="box item5">
-    <!-- Grid / Button back -->
-    <div class="btn">
-      <a ui-sref="form.name"> Back </a>
-    </div>
-  </div>
-</div>
-</form>
-
-</html>

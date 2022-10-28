@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/navbar.css" />
 
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css" />
     <!-- Main Angular Files -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
@@ -39,7 +40,6 @@
     <script src="app/controllers/formCtrl.js"></script>
     <script src="app/controllers/userCtrl.js"></script>
     <script src="app/controllers/mainCtrl.js"></script>
-    
 
     <!-- Angular Services -->
     <script src="app/services/userServices.js"></script>
@@ -48,7 +48,12 @@
     <title>YEDY</title>
   </head>
 
-  <body ng-controller="mainCtrl as main" ng-app="userApp" ng-show="main.loadme" ng-cloak>
+  <body
+    ng-controller="mainCtrl as main"
+    ng-app="userApp"
+    ng-show="main.loadme"
+    ng-cloak
+  >
     <!-- Navbar -->
     <div class="topnav" id="myTopnav">
       <img src="assets/img/letter-y.png" />
@@ -59,8 +64,17 @@
       <a ng-show="main.isLoggedIn" class="middle" href="/profile">Profile</a>
 
       <a ng-show="!main.isLoggedIn" href="/register" class="middle">Register</a>
-      <a ng-show="!main.isLoggedIn" href="/login" class="middle" id="login">Login</a>
-      <a ng-show="main.isLoggedIn "href="#" class="middle" id="logout" ng-click="main.logout();">Logout ({{ main.username}})</a>
+      <a ng-show="!main.isLoggedIn" href="/login" class="middle" id="login"
+        >Login</a
+      >
+      <a
+        ng-show="main.isLoggedIn "
+        href="#"
+        class="middle"
+        id="logout"
+        ng-click="main.logout();"
+        >Logout ({{ main.username}})</a
+      >
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -70,6 +84,40 @@
     <ng-view></ng-view>
 
     <!-- Footer -->
+
+    <footer>
+      <div class="footer-container">
+        <!-- FOOTER LEFT-->
+        <div class="footer-container-left">
+          <ul>
+            SITE LINKS
+            <a href="/home"><li>Home</li></a>
+            <a href="/about"><li>About</li></a>
+            <a href="/register"><li>Register</li></a>
+            <a href="/login"><li>Login</li></a>
+          </ul>
+        </div>
+        <!-- FOOTER LEFT-->
+        <div class="footer-container-right">
+          <ul>
+            <a onclick="window.open('https://github.com/Edifie/yedy-final')"
+              ><li>Source Code <i class="bi bi-arrow-right"></i></li>
+            </a>
+          </ul>
+        </div>
+        <!-- FOOTER BOTTOM-->
+        <div class="footer-container-bottom">
+          <hr />
+          <ul>
+            <li><img src="assets/img/angular.png" /></li>
+            <li><img src="assets/img/html.png" /></li>
+            <li><img src="assets/img/nodejs.png" /></li>
+            <li><img src="assets/img/mongodb.png" /></li>
+            <li><img src="assets/img/express.png" /></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <!-- NAVBAR SCRIPT -->
     <script>
@@ -82,9 +130,6 @@
         }
       }
     </script>
-
-
-
 
     <!-- GENERAL LIBRARIES -->
     <script src="assets/js/jquery-3.1.1.min.js"></script>

@@ -31,6 +31,7 @@ body {
   height: 340px;
   border-radius: 30px;
   margin-top: 30px;
+  
 }
 
 /* TEXT */
@@ -62,4 +63,5 @@ button {
   font-size: 18px;
   text-align: center;
 
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

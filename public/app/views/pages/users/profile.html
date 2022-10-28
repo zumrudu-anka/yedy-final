@@ -4,11 +4,12 @@
   <h1 style="color: #7d97f4">{{main.username}}'s Profile</h1>
 </div> -->
 
-<hr style="width: 85%; text-align: center" />
+
 
 <h2 class="td-title">My sites</h2>
+<hr style="width: 85%; text-align: center" />
 
-<div class="container">
+<div class="container" ng-show="main.isLoggedIn">
   <div class="grid-container">
     <!-- GRID LEFT -->
     <div class="grid-left">
@@ -20,6 +21,8 @@
       <a onclick="window.open('/app/views/forms/main-form.html')">
         <button>Create site</button>
       </a>
+
+      <!-- <a href="/app/views/forms/main-form.html"><button>Create site</button></a> -->
     </div>
   </div>
 </div>
