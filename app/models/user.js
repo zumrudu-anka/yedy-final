@@ -7,8 +7,7 @@ var validate = require("mongoose-validator");
 var nameValidator = [
   validate({
     validator: "matches",
-    arguments:
-      /^(([a-zA-Z]{2,})+[ ]+([a-zA-Z]{2,})+)+$/
+    arguments: /^(([a-zA-Z]{2,})+[ ]+([a-zA-Z]{2,})+)+$/,
   }),
 ];
 
@@ -34,7 +33,15 @@ var UserSchema = new Schema({
     lowercase: true,
     unique: true,
   },
+  forms: [
+    {
+      //an array for multiple forms
+      type: Schema.Types.ObjectId,
+      ref: "Form",
+    },
+  ],
 });
+
 
 //encryption password
 UserSchema.pre("save", function (next) {

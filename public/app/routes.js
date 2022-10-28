@@ -56,7 +56,7 @@ var app = angular
       if(next.$$route.authenticated == true){ //if they need to be logged in
           if(!Auth.isLoggedIn()){ //if user not logged in
             event.preventDefault(); //prevent to go to that route
-            $location.path('/register'); // and redirect them to homepage
+            $location.path('/register'); // and redirect them to register page
           }
       }else if (next.$$route.authenticated == false){ //if they dont need to be logged in
           if(Auth.isLoggedIn()){

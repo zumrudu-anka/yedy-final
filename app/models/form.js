@@ -8,7 +8,7 @@ var formSchema = new Schema({
   type: { type: String, lowercase: true, required: true },
   name: { type: String, required: true },
   tema: { type: String, lowercase: true, required: true },
-  userUsername: {type: mongoose.Types.ObjectId, ref: "User"}
+  user: {type: Schema.Types.ObjectId, ref: "User"} //not an array
 });
 
 module.exports = mongoose.model('Form', formSchema);

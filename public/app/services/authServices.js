@@ -35,6 +35,7 @@ angular
 
     //Auth.logout();
     authFactory.logout = function(){
+        
         AuthToken.setToken();
     };
 
