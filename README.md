@@ -1,6 +1,6 @@
 # Yedy
 
-In this project, a website will be developed in order to allow business owners to create a website in an easier way.
+In this project, a website will be developed with MEAN stack in order to allow business owners to create a website in an easier way.
 Initially, in the interface, the website creator can choose in which area wants to create it, and with the pre-made layouts, the database will be able to easily detect the necessary fields. Finally, just need to fill in the necessary fields to create the site.
 
 
@@ -31,3 +31,14 @@ Type this on console to run. This will start the **server.js** file.
 ``nodemon server``
 
 In order to see changes in the project, you need to save the file first and reflesh the page on the browser.
+
+## Install MongoDB
+
+Can be downloaded in [here](https://www.mongodb.com/docs/manual/installation/).
+
+To login to MongoDB write this URI for a new connection. 
+
+``mongodb://localhost:27017``
+
+All of the data will be stored under the **yedy database**.
+
