@@ -24,7 +24,7 @@ This will install all of the dependencies that project depends on. Dependencies 
 
 nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected. 
 
-``npm install nodemon -save``
+``npm install nodemon -g -save``
 
 Type this on console to run. This will start the **server.js** file. 
 
