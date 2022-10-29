@@ -11,7 +11,6 @@ angular
 
     // every time the view changes invoke the function
     $rootScope.$on('$routeChangeStart', function () {
-
       if (Auth.isLoggedIn()) {
         console.log("Success: User is logged in");
         app.isLoggedIn = true;
@@ -31,12 +30,13 @@ angular
     });
 
     this.doLogin = function (loginData) {
+      console.log(loginData)
       app.loading = true;
       app.errorMsg = false;
 
       Auth.login(app.loginData).then(function (data) {
         //   $http.post("/api/users", this.regData).then(function (data) {
-
+        console.log(data)
         // console.log(data.data.success);
         // console.log(data.data.message);
         if (data.data.success) {

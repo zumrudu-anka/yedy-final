@@ -33,13 +33,13 @@ var UserSchema = new Schema({
     lowercase: true,
     unique: true,
   },
-  forms: [
-    {
-      //an array for multiple forms
-      type: Schema.Types.ObjectId,
-      ref: "Form",
-    },
-  ],
+  // forms: [
+  //   {
+  //     //an array for multiple forms
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Form",
+  //   },
+  // ],
 });
 
 

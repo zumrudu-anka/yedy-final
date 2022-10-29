@@ -4,7 +4,6 @@ var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 var secret = "harrypotter";
 
-
 module.exports = function (router) {
   /**************************** Route - FORMS ******************************************/
 
@@ -18,19 +17,21 @@ module.exports = function (router) {
     form.type = req.body.type;
     form.name = req.body.name;
     form.tema = req.body.tema;
-
+    form.userId = req.body.userId;
+    
+    // form.userId = ;
     // res.json({
     //   area : req.body.area,
     //   responsive: req.body.responsive,
     //   name: req.body.name,
     //   tema: req.body.tema
     // });
-    console.log(req.body);
     if (
       req.body.area == null ||
       req.body.name == null ||
       req.body.type == null ||
-      req.body.tema == null
+      req.body.tema == null ||
+      req.body.userId == null
     ) {
       res.json({
         success: false,
@@ -43,6 +44,9 @@ module.exports = function (router) {
           res.json({ success: false, message: "Complete all the fields!" });
           console.log(err);
         } else {
+          // User.updateOne(
+          //   { _id : Schema.Types.ObjectId(loggedUserId) },
+          //   { $push : {"forms" : Schema.Types.ObjectId(form._id)} })
           res.json({ success: true, message: "Form created!" });
         }
       });
@@ -104,7 +108,7 @@ module.exports = function (router) {
   //http://localhost:8080/api/authenticate
   router.post("/authenticate", function (req, res) {
     User.findOne({ username: req.body.username })
-      .select("email username password")
+      .select("_id email username password")
       .exec(function (err, user) {
         if (err) throw err;
 
@@ -132,6 +136,7 @@ module.exports = function (router) {
               success: true,
               message: "User authenticated!",
               token: token,
+              userId : user._id
             });
           }
         }

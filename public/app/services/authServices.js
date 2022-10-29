@@ -1,12 +1,12 @@
 angular
 .module('authServices', [])
-.factory('Auth', function($http, AuthToken){
+.factory('Auth', function($http, AuthToken, AuthUser){
     var authFactory = {};
 
- 
     authFactory.login = function(loginData){
         return $http.post('/api/authenticate', loginData).then(function(data){
             AuthToken.setToken(data.data.token);
+            AuthUser.setUserId(data.data.userId);
             return data;
         });
     };
@@ -65,6 +65,25 @@ angular
 
 
     return authTokenFactory;
+})
+
+.factory('AuthUser', function($window){
+    var authUserFactory = {};
+
+    authUserFactory.setUserId = function(userId){
+        if(userId){
+            $window.localStorage.setItem('userId', userId);
+
+        }else{
+            $window.localStorage.removeItem('userId'); 
+        }
+    }
+
+    authUserFactory.getUserId = function(){ 
+        return $window.localStorage.getItem('userId');
+    };
+
+    return authUserFactory;
 })
 
 

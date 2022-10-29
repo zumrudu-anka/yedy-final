@@ -54,17 +54,20 @@ angular
 
   // our controller for the form
   // =============================================================================
-  .controller("formController", function ($scope, $http, $timeout, $location) {
+  .controller("formController", function ($scope, $http, $timeout, $location, $window) {
     // we will store all of our form data in this object
     $scope.formData = {};
 
     $scope.regForm = function (formData) {
+      // $scope.formData.userId = $window.localStorage.getItem("userId");
+      $scope.formData.userId = $window.localStorage.getItem("userId");
       $http
         .post("/api/forms", JSON.stringify($scope.formData))
         .success(function (data, status) {
           $timeout(function () {
             //delay for 2 seconds after submitting the form
             $location.path("/home"); // after submitting send to home page
+
           }, 2000);
           console.log("success");
         }),
